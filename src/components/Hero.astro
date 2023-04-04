@@ -1,0 +1,56 @@
+---
+---
+
+<section>
+  <div class="part1">
+    <h1>
+      Hello <br />
+      I’m Jenn <br />
+      Walkers <br />
+    </h1>
+
+    <p>UI designer, photographer and travel enthusiast</p>
+
+    <div class="icon-scroll">
+      <div class="iconball"></div>
+    </div>
+  </div>
+  <img src="/image/main_img.jpg" alt="" />
+</section>
+
+<style lang="scss">
+  @import "../layouts/stylesheet/main.scss";
+  img {
+    border-radius: 30px;
+  }
+
+  p {
+    font-size: 22px;
+    color: $violet;
+    font-family: "Poppins";
+    max-width: 300px;
+  }
+  section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: -1;
+
+    .part1 {
+      width: 32%;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 55px;
+      margin-top: 6%;
+      .icon-scroll {
+        width: 32px;
+        height: 54px;
+        border-radius: 25px;
+        background-color: $violet;
+        border: solid #ffffff 4px;
+        box-shadow: 0 0 0 13px $violet;
+      }
+    }
+  }
+</style>
