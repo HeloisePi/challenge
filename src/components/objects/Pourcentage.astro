@@ -11,7 +11,7 @@ let name: string = props.name;
   <div class="gauge">
     <p>{name}</p>
     <div class="backgauge">
-      <div class="frontgauge" style={pourcentage} ;></div>
+      <div class="frontgauge" anim-scale style={pourcentage}></div>
     </div>
   </div>
 </div>
@@ -55,6 +55,7 @@ let name: string = props.name;
     background-color: #ffffff;
     border-radius: 30px;
     position: relative;
+
     .frontgauge {
       position: absolute;
       top: 0;
@@ -64,6 +65,7 @@ let name: string = props.name;
       height: 28px;
       width: var(--gaugewidth);
       border-radius: 30px;
+      transform-origin: left;
     }
   }
   @media screen and (max-width: 940px) {

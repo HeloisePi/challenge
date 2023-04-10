@@ -184,6 +184,47 @@ const { title } = Astro.props;
       
     })
   })
+
+  // ---------------------------
+
+  const items = document.querySelectorAll(".numberdata");
+
+gsap.from(items, {
+  textContent: 0,
+  duration: 2,
+  ease: "power1.in",
+  snap: { textContent: 2 },
+  stagger: {
+    each: 1.0,
+    onUpdate: function() {
+      this.targets()[0].innerHTML = numberWithCommas(Math.ceil(this.targets()[0].textContent));
+    },
+  }
+});
+
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+  //-----------------
+  
+  const animscaleElements: string[] = gsap.utils.toArray("[anim-scale]");
+  
+  animscaleElements.forEach((animscaleElement) => {
+    
+    gsap.from(animscaleElement, {
+      scrollTrigger: {
+        trigger: animscaleElement,
+        start: "top 99%",
+        end: "bottom top",
+        once: true
+      },
+      duration: 2,
+      scale: 0,
+      ease: 'ease1'
+      
+    })
+  })
     
   
 </script>
