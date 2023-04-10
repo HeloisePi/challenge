@@ -4,19 +4,19 @@ import Scroll from "./animations/Scroll.astro";
 
 <section id="home">
   <div class="part1">
-    <h1>
+    <h1 anim-opacity-low>
       Hello <br />
       I’m Jenn <br />
       Walkers <br />
     </h1>
 
-    <p>UI designer, photographer and travel enthusiast</p>
-    <div class="scroll">
+    <p anim-bottom>UI designer, photographer and travel enthusiast</p>
+    <div class="scroll" anim-bottom>
       <Scroll />
 
     </div>
   </div>
-  <img src="/image/main_img.jpg" alt="" />
+  <img src="/image/main_img.jpg" alt="mainimage" anim-opacity-low/>
 </section>
 
 <style lang="scss">

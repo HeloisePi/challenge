@@ -30,16 +30,160 @@ const { title } = Astro.props;
 
 <script >
   import gsap from "gsap";
-  import ScrollTrigger from "gsap/ScrollTrigger";
+  import {ScrollTrigger} from "gsap/ScrollTrigger";
+  import {CustomEase} from "gsap/CustomEase";
   import { animateNav } from "./utils/animheader";
 
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, CustomEase);
+
+  var ease1 = CustomEase.create("ease1", "0.165, 0.84, 0.44, 1");
   
   window.addEventListener("load", () => {
 
     animateNav()
   })
+  //-----------------
+  const animLeftElements: string[] = gsap.utils.toArray("[anim-left]");
   
+  animLeftElements.forEach((animLeftElement) => {
+    
+    gsap.from(animLeftElement, {
+      scrollTrigger: {
+        trigger: animLeftElement,
+        start: "top 90%",
+        end: "bottom top",
+        once: true
+      },
+      duration: 1.5,
+      x:"100%",
+      ease: 'ease1'
+
+      
+    })
+  })
+  //-----------------
+  const animRightElements: string[] = gsap.utils.toArray("[anim-right]");
+  
+  animRightElements.forEach((animRightElement) => {
+    
+    gsap.from(animRightElement, {
+      scrollTrigger: {
+        trigger: animRightElement,
+        start: "top 90%",
+        end: "bottom top",
+        once: true
+      },
+      duration: 1,
+      x:"-100%",
+      ease: 'ease1'
+      
+    })
+  })
+
+  //-----------------
+  
+  const animBottomElements: string[] = gsap.utils.toArray("[anim-bottom]");
+  
+  animBottomElements.forEach((animBottomElement) => {
+    
+    gsap.from(animBottomElement, {
+      scrollTrigger: {
+        trigger: animBottomElement,
+        start: "top 99%",
+        end: "bottom top",
+        once: true
+      },
+      duration: 1.5,
+      opacity: 0,
+      y:"200%",
+      ease: 'ease1'
+      
+    })
+  })
+
+
+  //-----------------
+  
+  const animBottomLittleElements: string[] = gsap.utils.toArray("[anim-bottom-little]");
+  
+  animBottomLittleElements.forEach((animBottomLittleElement) => {
+    
+    gsap.from(animBottomLittleElement, {
+      scrollTrigger: {
+        trigger: animBottomLittleElement,
+        start: "top top",
+        end: "top top",
+        once: true
+        
+      },
+      duration: 1,
+      opacity: 0,
+      y:"5%",
+      ease: 'ease1'
+      
+    })
+  })
+
+  //-----------------
+  
+  const animOpacityLowElements: string[] = gsap.utils.toArray("[anim-opacity-low]");
+  
+  animOpacityLowElements.forEach((animOpacityLowElement) => {
+    
+    gsap.from(animOpacityLowElement, {
+      scrollTrigger: {
+        trigger: animOpacityLowElement,
+        start: "top 99%",
+        end: "bottom top",
+        once: true
+      },
+      duration: 4,
+      opacity:"0",
+      ease: 'ease1'
+      
+    })
+  })
+
+  //-----------------
+  
+  const animOpacityElements: string[] = gsap.utils.toArray("[anim-opacity]");
+  
+  animOpacityElements.forEach((animOpacityElement) => {
+    
+    gsap.from(animOpacityElement, {
+      scrollTrigger: {
+        trigger: animOpacityElement,
+        start: "top 99%",
+        end: "bottom top",
+        once: true
+      },
+      duration: 2,
+      opacity:"0",
+      ease: 'ease1'
+      
+    })
+  })
+
+  //-----------------
+  
+  const animLeftOpacityElements: string[] = gsap.utils.toArray("[anim-left-opacity]");
+  
+  animLeftOpacityElements.forEach((animLeftOpacityElement) => {
+    
+    gsap.from(animLeftOpacityElement, {
+      scrollTrigger: {
+        trigger: animLeftOpacityElement,
+        start: "top 99%",
+        end: "bottom top",
+        once: true
+      },
+      duration: 2,
+      x:"30%",
+      opacity:0,
+      ease: 'ease1'
+      
+    })
+  })
     
   
 </script>
