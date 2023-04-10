@@ -28,9 +28,18 @@ const { title } = Astro.props;
   </body>
 </html>
 
-
-<script>
+<script >
   import gsap from "gsap";
   import ScrollTrigger from "gsap/ScrollTrigger";
+  import { animateNav } from "./utils/animheader";
+
   gsap.registerPlugin(ScrollTrigger);
+  
+  window.addEventListener("load", () => {
+
+    animateNav()
+  })
+  
+    
+  
 </script>

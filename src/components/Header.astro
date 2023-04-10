@@ -1,38 +1,61 @@
 ---
 ---
 
-<section>
+<section class="header">
   <img src="/image/logo.png" alt="" />
-  <a href="/#home"><p>HOME</p></a>
-  <a href="/#about"><p>ABOUT</p></a>
-  <a href="/#service"><p>SERVICES</p></a>
-  <a href="/#portfolio"><p>PORTFOLIO</p></a>
-  <a href="/#skills"><p>SKILLS</p></a>
-  <a href="/#experience"><p>EXPERIENCE</p></a>
-  <a href="/#blog"><p>BLOG</p></a>
-  <a href="/#testimonial"><p>TESTIMONIAL</p></a>
-  <a href="/#contact"><p>CONTACT</p></a>
+  <a href="/#home"><p class="home">HOME</p></a>
+  <a href="/#about"><p class="about" >ABOUT</p></a>
+  <a href="/#service"><p class="services" >SERVICES</p></a>
+  <a href="/#portfolio"><p class="portfolio" >PORTFOLIO</p></a>
+  <a href="/#skills"><p class="skills" >SKILLS</p></a>
+  <a href="/#experience"><p class="experience" >EXPERIENCE</p></a>
+  <a href="/#blog"><p class="blog" >BLOG</p></a>
+  <a href="/#testimonial"><p class="testimonial">TESTIMONIAL</p></a>
+  <a href="/#contact"><p class="contact" >CONTACT</p></a>
   <a href="#!"><p>EXTRA PAGES</p></a>
 </section>
 
-<style lang="scss">
+<style lang="scss" is:global>
   @import "../layouts/stylesheet/main.scss";
-  section {
+  .header{
+
+  
     position: fixed;
     top: 72px;
     right: 5%;
-  }
-  img {
-    width: 140px;
-    height: 140px;
-    margin-bottom: 57px;
-  }
-  p {
-    font-size: 14px;
-    font-family: "Poppins";
-    color: $darkviolet;
-    letter-spacing: 1px;
-    line-height: 24px;
-    margin-bottom: 14px;
+    overflow: hidden;
+    
+    img {
+      width: 140px;
+      height: 140px;
+      margin-bottom: 57px;
+    }
+    p {
+      font-size: 14px;
+      font-family: "Poppins";
+      color: $darkviolet;
+      letter-spacing: 1px;
+      line-height: 24px;
+      margin-bottom: 14px;
+      position: relative;
+      width: fit-content;
+      transition: 0.35s ease-out;
+      
+    }
+    p::before{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background-color: #ffffff;
+      top: 22px;
+      transform: translateX(-100%);
+      transition:  0.35s ease-out;
+  
+    }
+    .active::before{
+      content: "";
+      transform: translateX(0%);
+    }
   }
 </style>
