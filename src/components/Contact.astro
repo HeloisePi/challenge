@@ -1,4 +1,8 @@
 ---
+import Behance from "./objects/icons/Behance.astro";
+import Facebook from "./objects/icons/Facebook.astro";
+import Twitter from "./objects/icons/Twitter.astro";
+import Youtube from "./objects/icons/Youtube.astro";
 ---
 
 <section id="contact">
@@ -54,10 +58,10 @@
       </p>
     </div>
     <div class="logo">
-      <img src="/image/logo/behance.svg" alt="behance" />
-      <img src="/image/logo/twitter.svg" alt="twitter" />
-      <img src="/image/logo/facebook.svg" alt="facebook" />
-      <img src="/image/logo/youtube.svg" alt="youtube" />
+      <Behance colorhover='#59437a' color= '#ffff'/>
+      <Twitter colorhover='#59437a' color= '#ffff'/>
+      <Facebook colorhover='#59437a' color= '#ffff'/>
+      <Youtube colorhover='#59437a' color= '#ffff'/>
     </div>
   </div>
 </section>
@@ -149,7 +153,6 @@
       display: flex;
       flex-direction: row;
       gap: 20px;
-      fill: $violet;
     }
   }
   section {
