@@ -1,5 +1,16 @@
 html {
     background-color: $backpink;
+    overflow-X: hidden;
+    max-width: 100vw;
+    position: relative;
+    width: 100vw;
+   
+}
+body{
+    overflow-X: hidden;
+    max-width: 100vw;
+    position: relative;
+    width: 100vw;
 }
 
 h1{

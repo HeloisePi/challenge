@@ -1,0 +1,26 @@
+---
+const props = Astro.props;
+let left = props.left;
+let top: string = props.top;
+---
+
+<div class="big-round" />
+   
+<style lang="scss" define:vars={{ left: left, top: top }}>
+    @import "../../layouts/stylesheet/main.scss";
+    div{
+        background-color: $beige;
+        width: 1600px;
+        height: 1600px;
+        border-radius: 50%;
+        position: absolute;
+        z-index: -2;
+        left: var(--left);
+        top: var(--top);
+    }
+    @media screen and (max-width: 825px) {
+        div{
+            display: none;
+        }
+    }
+</style>

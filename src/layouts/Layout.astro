@@ -1,4 +1,6 @@
 ---
+import Biground from "../components/objects/Biground.astro";
+import Littleround from "../components/objects/Littleround.astro";
 import "./stylesheet/main.scss";
 export interface Props {
   title: string;
@@ -16,12 +18,16 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
+  <Biground left='58%' top='8%'/>
+  <Biground left='49%' top='36%'/>
+  <Biground left='49%' top='69%'/>
+  <Littleround left='-38%' top='26%'/>
+  <Littleround left='-38%' top='55%'/>
   <body>
     <slot />
   </body>
 </html>
 
-<!--<style lang="scss" is:global>-->
 
 <script>
   import gsap from "gsap";
