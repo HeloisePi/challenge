@@ -1,0 +1,120 @@
+---
+import Link from "./Link.astro";
+
+const props = Astro.props;
+let title: string = props.title;
+let scr: string = props.scr;
+let description: string = props.description;
+let name: string = props.name;
+let width = props.width;
+---
+
+<section>
+  <div class="containerimg">
+    <img src={scr} alt="" />
+  </div>
+  <div class="information">
+    <h5>{title}</h5>
+    <p>{description}</p>
+    <Link name={name} />
+  </div>
+
+  <style lang="scss" define:vars={{ widthimg: width }}>
+    @import "../../layouts/stylesheet/main.scss";
+    section {
+      display: grid;
+      grid-template-columns: var(--widthimg) auto;
+      grid-column-gap: 30px;
+      .containerimg {
+        height: auto;
+        width: var(--widthimg);
+        border-radius: 30px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      img {
+        object-fit: contain;
+        object-position: center;
+        border-radius: 30px;
+        -webkit-transition: 0.4s ease;
+        transition: 0.4s ease;
+
+        &:hover {
+          -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+        }
+      }
+      .information {
+        h5 {
+          font-size: 28px;
+          font-family: "Poppins-Bold";
+          color: $violet;
+          margin-top: 25px;
+          margin-bottom: 31px;
+        }
+        p {
+          font-size: 15px;
+          font-family: "Poppins";
+          color: $violet;
+          margin-bottom: 67.5px;
+        }
+        @media screen and (max-width: 1200px) {
+          p{
+              margin-bottom: 27.5px;
+          }
+            h5{
+              margin-bottom: 14px;
+          }
+        }
+        a {
+          height: fit-content;
+          width: fit-content;
+          position: relative;
+
+          &::before {
+            content: "";
+            bottom: 0%;
+            position: absolute;
+            background-color: $violet;
+            width: 100%;
+            height: 3px;
+            transition: width 0.35s ease-out;
+          }
+
+          &:hover::before {
+            background-color: #ffffff;
+            width: 5px;
+          }
+
+          p {
+            margin: 0;
+            font-family: "Poppins-Bold";
+            transition: 0.35s ease-out;
+            &:hover {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+      
+      
+    }
+    @media screen and (max-width: 1200px) {
+      section{
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        .containerimg {
+          max-width: 100%;
+          width: 100%;
+          height: fit-content;
+          img{
+            width: 100%;
+            
+          }
+        }
+      }
+    }
+  </style>
+</section>

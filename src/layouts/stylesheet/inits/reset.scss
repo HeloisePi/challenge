@@ -32,6 +32,16 @@ p {
 	margin: 0;
 }
 
+input, textarea{
+	border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+}
+input:focus, textarea:focus{
+	outline: none;
+	  }
+
 h1,
 h2,
 h3,

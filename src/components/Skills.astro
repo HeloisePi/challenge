@@ -1,0 +1,71 @@
+---
+import Pourcentage from "./objects/Pourcentage.astro";
+---
+
+<section id="skills">
+  <div class="information">
+    <h5>
+      Nam ultrices ultrices nec tortor pulvinar esteras loremips estorem ipusm
+    </h5>
+    <p>
+      Mauris volutpat estera phasellus. Varius nec orcina quam augue loremes
+      lines rester pellentesque non estar identiqum pere setarra nunc vulputate
+      id in nullam lorem ipsum dolor setarra nunc vulputateester.
+    </p>
+    <p>
+      Tristique amet volutpat nunc euismod mauris nonce ollicitudin est sempe
+      vulputate id in nullam. Purusat tincidunt maga ut turpis eu, eu enim. Nisl
+      porttitor elit risus velit urnase morbit mauris at proin laoreet est
+      lobortis urna aliquame setera fermentum sit iaculis
+    </p>
+  </div>
+  <div class="pourcent">
+    <Pourcentage pourcentage="75%" name="Creativity" />
+    <Pourcentage pourcentage="45%" name="Cooking" />
+    <Pourcentage pourcentage="90%" name="PhP" />
+    <Pourcentage pourcentage="65%" name="Marketing" />
+    <Pourcentage pourcentage="85%" name="Design" />
+  </div>
+</section>
+
+<style lang="scss">
+  @import "../layouts/stylesheet/main.scss";
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 50px;
+    .information {
+      background-color: $violet;
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding-left: 45px;
+      padding-right: 45px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      h5 {
+        font-family: "Poppins-Bold";
+        font-size: 26px;
+        color: #ffffff;
+      }
+      p {
+        font-family: "Poppins";
+        font-size: 15px;
+        color: #ffffff;
+      }
+    }
+    .pourcent {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding-top: 10%;
+      padding-bottom: 10%;
+    }
+  }
+  @media screen and (max-width: 940px) {
+    section{
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

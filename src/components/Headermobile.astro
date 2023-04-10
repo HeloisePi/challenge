@@ -1,0 +1,197 @@
+---
+---
+
+<section>
+  <div class="headermobile">
+
+    <div class="headershow">
+      <img class="logo" src="/image/logo.png" alt="" />
+      <div class="toggle">
+        <div class="menu-line"></div>
+        </div>
+    </div>
+    <div class="slide close">
+      <a class="close-menu" href="/#home"><p>HOME</p></a>
+      <a class="close-menu" href="/#about"><p>ABOUT</p></a>
+      <a class="close-menu" href="/#service"><p>SERVICES</p></a>
+      <a class="close-menu" href="/#portfolio"><p>PORTFOLIO</p></a>
+      <a class="close-menu" href="/#skills"><p>SKILLS</p></a>
+      <a class="close-menu" href="/#experience"><p>EXPERIENCE</p></a>
+      <a class="close-menu" href="/#blog"><p>BLOG</p></a>
+      <a class="close-menu" href="/#testimonial"><p>TESTIMONIAL</p></a>
+      <a class="close-menu" href="/#contact"><p>CONTACT</p></a>
+      <a class="close-menu" href="#!"><p>EXTRA PAGES</p></a>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @import "../layouts/stylesheet/main.scss";
+  
+  section{
+    overflow: hidden;
+    position: relative;
+  }
+  .headermobile {
+    top: 0;
+    left: 0;
+    z-index: 3;
+    position: fixed;
+    
+    .headershow {
+      height: 65px;
+      width: 100vw;
+      background-color: $pink;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      .toggle{
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        left: auto;
+      
+        
+        
+      .menu-line{
+        width: 100%;
+        height: 3px;
+        position: absolute;
+        -webkit-transition: all .25s;
+        transition: all .25s;
+        top: 10px;
+        background-color: #ffffff;
+        &:before{
+          content: '';
+          height: 3px;
+          width: 100%;
+          position: absolute;
+          -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+          -webkit-transition: -webkit-transform .25s;
+          -webkit-transition: all .25s;
+          transition: all .25s;
+          top: 10px;
+          background-color: #ffffff;
+        }
+        &:after{
+          content: '';
+          height: 3px;
+          width: 100%;
+          position: absolute;
+          -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+          -webkit-transition: -webkit-transform .25s;
+          -webkit-transition: all .25s;
+          transition: all .25s;
+          top: -10px;
+          background-color: #ffffff;
+        }
+      }
+
+    
+  
+       
+         span{
+          width: 25px;
+          height: 3px;
+          background-color: #ffffff;
+          -webkit-transform-origin: left center;
+          -moz-transform-origin: left center;
+          -o-transform-origin: left center;
+          transform-origin: left center;
+          
+        }
+      }
+
+      img {
+        width: 25px;
+        height: 23px;
+        margin-right: 20px;
+      }
+      .logo {
+        width: 65px;
+        height: 65px;
+      }
+    }
+    .close {
+      transform: translateX(100%);
+    }
+  
+    .slide {
+      background-color: $pink;
+      height: 100vh;
+      width: 250px;
+      right: 0%;
+      position: absolute;
+      padding: 5%;
+      transition: 0.5s;
+
+      p {
+        font-size: 14px;
+        font-family: "Poppins";
+        color: #ffffff;
+        letter-spacing: 1px;
+        line-height: 24px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  section .headermobile .headershow .is-close .menu-line{
+      
+      &::before{
+        content: '';
+          height: 3px;
+          width: 100%;
+          position: absolute;
+          -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+          -webkit-transition: -webkit-transform .25s;
+          -webkit-transition: all .25s;
+          transition: all .25s;
+          top: -10px;
+          background-color: #ffffff;
+          transform: rotate(-45deg);
+          opacity: 1;
+      }
+      &::after{
+        content: '';
+          height: 3px;
+          width: 100%;
+          position: absolute;
+          -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+          -webkit-transition: -webkit-transform .25s;
+          -webkit-transition: all .25s;
+          transition: all .25s;
+          top: -10px;
+          background-color: #ffffff;
+          transform: rotate(45deg);
+          opacity: 1;
+      }
+    }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const headermobile = document.querySelector(".headermobile");
+    const section = document.querySelector("section");
+    const toggle = document.querySelector(".toggle");
+    var a = document.querySelectorAll(".slide a");
+    const slide = document.querySelector(".slide");
+
+    headermobile.addEventListener("click", function (e) {
+      if (e.target.classList.contains("toggle")) {
+        slide.classList.toggle("close");
+        toggle.classList.toggle("is-close");
+       }
+      if (e.target.classList.contains("close-menu")) {
+          slide.classList.remove("close");
+       }
+    });
+  });
+</script>

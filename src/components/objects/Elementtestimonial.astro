@@ -1,0 +1,44 @@
+---
+const props = Astro.props;
+let description: string = props.description;
+let name: string = props.name;
+let site: string = props.site;
+---
+
+<div class="quote">
+  <img src="/image/quotes.png" alt="" />
+  <p class="description">{description}</p>
+  <p class="name">{name}</p>
+  <p>{site}</p>
+</div>
+
+<style lang="scss">
+  @import "../../layouts/stylesheet/main.scss";
+  .quote {
+    background-color: $violet;
+    border-radius: 30px;
+    width: 400px;
+    height: 300px;
+    padding: 40px;
+    img {
+      margin-bottom: 15px;
+    }
+    p {
+      color: #ffffff;
+      font-family: "Poppins";
+      font-size: 15px;
+    }
+    .name {
+      font-family: "Poppins-SemiBold";
+    }
+    .description {
+      margin-bottom: 28px;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .quote{
+      width: 100%;
+      height: fit-content;
+    }
+  }
+</style>

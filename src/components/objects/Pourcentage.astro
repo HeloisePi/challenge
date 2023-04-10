@@ -1,0 +1,74 @@
+---
+const props = Astro.props;
+let pourcentage = props.pourcentage;
+let name: string = props.name;
+---
+
+<div class="pourcentelement">
+  <div class="number">
+    <p>{pourcentage}</p>
+  </div>
+  <div class="gauge">
+    <p>{name}</p>
+    <div class="backgauge">
+      <div class="frontgauge" style={pourcentage} ;></div>
+    </div>
+  </div>
+</div>
+
+<style lang="scss" define:vars={{ gaugewidth: pourcentage }}>
+  @import "../../layouts/stylesheet/main.scss";
+  .pourcentelement {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 25px;
+
+    gap: 30px;
+    .number {
+      p {
+        font-size: 30px;
+        font-family: "Poppins";
+        color: $violet;
+        transform: translateY(21px);
+      }
+    }
+  }
+  @media screen and (max-width: 940px) {
+    .pourcentelement{
+      display: grid;
+      grid-template-columns: 10% 1fr;
+    }
+  }
+  .gauge {
+    p {
+      margin-bottom: 11px;
+      font-size: 16px;
+      font-family: "Poppins";
+      color: $violet;
+      letter-spacing: 5px;
+    }
+  }
+  .backgauge {
+    width: 360px;
+    height: 10px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    position: relative;
+    .frontgauge {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-34%);
+      background-color: $violet;
+      height: 28px;
+      width: var(--gaugewidth);
+      border-radius: 30px;
+    }
+  }
+  @media screen and (max-width: 940px) {
+    .backgauge{
+      width: 100%;
+    }
+  }
+</style>

@@ -1,10 +1,79 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Service from "../components/Service.astro";
+import Portfolio from "../components/Portfolio.astro";
+import Skills from "../components/Skills.astro";
+import Experience from "../components/Experience.astro";
+import Blog from "../components/Blog.astro";
+import Testimonial from "../components/Testimonial.astro";
+import Contact from "../components/Contact.astro";
+import Header from "../components/Header.astro";
+import Headermobile from "../components/Headermobile.astro";
 ---
 
 <Layout title="challenge">
   <main>
-    <Hero />
+    <div class="headerdesktop">
+      <Header />
+    </div>
+    <div class="headerdmobile">
+      <Headermobile /> 
+    </div>
+    <div class="container">
+      <Hero />
+      <About />
+      <Service />
+      <Portfolio />
+      <Skills />
+      <Experience />
+      <Blog />
+      <Testimonial />
+      <Contact /> 
+    </div>
   </main>
+
+  <style lang="scss">
+    main {
+      width: 100%;
+
+      .headerdesktop {
+        display: block;
+      }
+      .headerdmobile {
+        display: none;
+        width: 100vw;
+      }
+      @media screen and (max-width: 1200px) {
+      .headerdesktop {
+        display: none;
+      }
+      .headerdmobile {
+        display: block;
+        width: 100vw;
+      }
+  }
+    }
+    .container {
+      width: 960px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 201px;
+      margin-left: 50%;
+      transform: translateX(-60%);
+      margin-top: 72px;
+      margin-bottom: 50px;
+      
+    }
+    
+    @media screen and (max-width: 1200px) {
+        .container{
+        transform: translateX(-50%);
+        width: 90vw;
+        
+      }
+    }
+  </style>
 </Layout>

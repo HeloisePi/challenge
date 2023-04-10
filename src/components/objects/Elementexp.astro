@@ -1,0 +1,42 @@
+---
+const props = Astro.props;
+let date: string = props.date;
+let job: string = props.job;
+let description: string = props.description;
+let where: string = props.where;
+---
+
+<div class="experience">
+  <p>{date}</p>
+  <div>
+    <p>{job}</p>
+    <p>{description}</p>
+    <p>{where}</p>
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../../layouts/stylesheet/main.scss";
+  p {
+    font-size: 15px;
+    font-family: "Poppins";
+    color: $violet;
+    line-height: 25.5px;
+  }
+  .experience {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 2px solid $violet;
+    padding: 24px;
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
+  @media screen and (max-width: 770px) {
+      .experience{
+        grid-template-columns: 1fr;
+      }
+      }
+</style>

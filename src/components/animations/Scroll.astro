@@ -1,0 +1,46 @@
+---
+---
+
+<div class="icon-scroll"></div>
+
+<style lang="scss">
+  @import "../../layouts/stylesheet/main.scss";
+  .icon-scroll {
+    width: 32px;
+    height: 54px;
+    border-radius: 25px;
+    background-color: $violet;
+    border: solid #ffffff 4px;
+    box-shadow: 0 0 0 13px $violet;
+    position: relative;
+    &::before {
+      content: "";
+      background-color: #ffffff;
+      border-radius: 50%;
+      position: absolute;
+      top: 12%;
+      right: 50%;
+      transform: translateX(50%);
+      width: 8px;
+      height: 8px;
+      animation-duration: 1.5s;
+      animation-name: scroll;
+      animation-iteration-count: infinite;
+    }
+  }
+  @keyframes scroll {
+    0% {
+      opacity: 1;
+      transform: translate(50%, 0px);
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate(50%, 25px);
+    }
+  }
+</style>

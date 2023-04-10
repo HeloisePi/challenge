@@ -1,0 +1,112 @@
+---
+const props = Astro.props;
+let title: string = props.title;
+---
+
+<div class="button">
+  <script></script>
+  <p>{title}</p>
+  <div class="list">
+    <ul>
+      <li>Aces fames lectus in libero</li>
+      <li>Est aliquet est ertare ram</li>
+      <li>Feraso est lorem nunc dolor</li>
+      <li>Sit amet se settera aces set</li>
+      <li>Volutpat inte setera estercu</li>
+    </ul>
+  </div>
+</div>
+
+<style lang="scss" is:global>
+  @import "../../layouts/stylesheet/main.scss";
+  li::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    background-color: rgba(29, 29, 29, 0.2);
+    border-radius: 2px;
+  }
+
+  .button {
+    min-height: 138px;
+    width: 455px;
+    background-color: $violet;
+    border-radius: 30px;
+    padding-top: 43px;
+    height: fit-content;
+
+    &:hover {
+      p {
+        color: $backpink;
+      }
+    }
+
+    p {
+      font-size: 38px;
+      font-family: "Poppins-Bold";
+      color: #ffffff;
+      text-align: center;
+      pointer-events: none;
+    }
+    .list {
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      background-color: $violet;
+      display: flex;
+      justify-content: center;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      transition: height 1s ease-out;
+
+      ul {
+        margin-top: 45px;
+        margin-bottom: 45px;
+      }
+      li {
+        color: #ffffff;
+        font-size: 16px;
+        font-family: "Poppins";
+        line-height: 40px;
+      }
+    }
+    &.hidden {
+      .list {
+        height: 280px;
+      }
+    }
+  }
+  @media screen and (max-width: 1015px) {
+      .button {
+          width: 100%;
+          min-height: 70px;
+          padding: 11.5px;
+          p{
+            font-size: 30px;
+          }
+          .list{
+            justify-content: flex-start;
+            padding-left: 10px;
+            transition: height 0.4s ease-out;
+            
+
+            ul{
+              margin-top: 15px;
+            }
+          }
+        
+      }
+
+    }
+</style>
+<script>
+  var buttons = document.querySelectorAll(".button");
+
+  buttons.forEach((element) => {
+    element.addEventListener("click", function (e) {
+      e.target.classList.toggle("hidden");
+    });
+  });
+</script>

@@ -1,0 +1,32 @@
+---
+import Elementportfolio from "./objects/Elementportfolio.astro";
+import Link from "./objects/Link.astro";
+---
+
+<section id="portfolio">
+  <Elementportfolio
+    scr="/image/portfolio_item_01.jpg"
+    title="Web Design"
+    description="Mauris volutpat estera phasellus varius nec orci, quam augue se loremes lines pellentesque non"
+    name="view more"
+    width="650px"
+  />
+
+  <Elementportfolio
+    scr="/image/portfolio_item_02.jpg"
+    title="Grid"
+    description="Volutpat estera phasellus varius nec orci, quam augue se loremes lines pellentesque non mareque"
+    name="view more"
+    width="650px"
+  />
+
+  <Link name="LOAD MORE" />
+</section>
+
+<style lang="scss">
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+</style>

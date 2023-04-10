@@ -13,5 +13,10 @@ h1{
 h2{
     font-family: 'Poppins-SemiBold' ;
     font-size: 200px;
-    color: #ffffff;
+    color: $lightpink;
+    position: absolute;
+    transform: rotate(-90deg);
+    z-index: -1;
+    top: 18%;
+    right: 72%;
 }

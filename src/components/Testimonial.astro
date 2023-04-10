@@ -1,0 +1,142 @@
+---
+import Arrow from "./objects/Arrow.astro";
+import Company from "./objects/Company.astro";
+import Elementtestimonial from "./objects/Elementtestimonial.astro";
+---
+
+<section id="testimonial">
+  <div class="element">
+    <Elementtestimonial
+      description="Duis iaculis vulputate mauris, vitae ultricies nunc sodales et. Nunc at pin laoreet est lobortis est report.placerat vulputate malesuad tempus erat si"
+      name="Jenny Stone"
+      site="www.somesite.com"
+    />
+    <div class="arrow">
+      <Arrow />
+    </div>
+  </div>
+  <div class="element">
+    <Elementtestimonial
+      description="Aenean molestie vehicula nisl, sit amet pharetra ex ultricies et. Sed sapien diam, efficitur a orci nec, imperdiet accumsan."
+      name="Oliver Smith"
+      site="www.somesite.com"
+    />
+    <div class="arrow">
+      <Arrow />
+    </div>
+  </div>
+  <div class="element">
+    <Elementtestimonial
+      description="Vivamus tortor nunc, pulvinar maximus rutrum eget, commodo eu elit. Vivamus in tellus ante. In sed vestibulum dolor. Integer ornare mollis purus, aliquam rutrum diam finibus necius lorem ipsum."
+      name="Anna Wilson"
+      site="www.somesite.com"
+    />
+    <div class="arrow">
+      <Arrow />
+    </div>
+  </div>
+  <div class="element">
+    <Elementtestimonial
+      description="Quisque vitae augue lorem. Duis dapibus auctor dui et aliquet. Nullam scelerisque justo et libero malesuada venenatis. Quisque tincidunt dignissim turpis vitae."
+      name="Petra Who"
+      site="www.somesite.com"
+    />
+    <div class="arrow">
+      <Arrow />
+    </div>
+  </div>
+  <div class="line"></div>
+</section>
+<div class="compagnies">
+  <Company src="/image/company_logo_01.png" />
+  <Company src="/image/company_logo_02.png" />
+  <Company src="/image/company_logo_03.png" />
+  <Company src="/image/company_logo_04.png" />
+</div>
+
+<style lang="scss">
+  @import "../layouts/stylesheet/main.scss";
+  section {
+    position: relative;
+    .line {
+      top: 0;
+      left: 50%;
+      transform: translateX(50%);
+      background-color: #ffffff;
+      height: 100%;
+      width: 3px;
+      position: absolute;
+    }
+    @media screen and (max-width: 1024px) {
+      .line{
+        left: 98%;
+      }
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    section{
+      display: flex;
+      flex-direction:column;
+      align-items:  flex-end;
+    }
+  }
+  .element {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -9px);
+    }
+  }
+
+  section .element:nth-child(even) {
+    transform: translateX(140%);
+  }
+  section .element:nth-child(odd) {
+    .arrow {
+      right: -14px;
+      transform: rotate(180deg);
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    section .element:nth-child(even) {
+      transform: translateX(0%);
+      
+      }
+      .arrow {
+      right: -14px;
+      
+    }
+    section .element:nth-child(even) {
+    .arrow {
+      transform: rotate(180deg);
+    }
+  }
+  .element{
+    margin-right: 70px;
+    margin-bottom: 20px;
+  }
+    }
+    @media screen and (max-width: 314px) {
+      .element{
+    margin-right: 40px;
+  }
+    }
+  .compagnies {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 1fr 1fr;
+    grid-row-gap: 50px;
+    grid-column-gap: 50px;
+  }
+  @media screen and (max-width: 1024px) {
+    .compagnies{
+      grid-template-columns: 1fr;
+      grid-template-areas: 1fr 1fr 1fr 1fr;
+
+    }
+  }
+</style>

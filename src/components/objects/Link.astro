@@ -1,0 +1,41 @@
+---
+const props = Astro.props;
+let name: string = props.name;
+---
+
+<a href="!#"><p>{name}</p></a>
+
+<style lang="scss">
+  @import "../../layouts/stylesheet/main.scss";
+  a {
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+
+    &::before {
+      content: "";
+      bottom: 0%;
+      position: absolute;
+      background-color: $violet;
+      width: 100%;
+      height: 3px;
+      transition: width 0.35s ease-out;
+    }
+
+    &:hover::before {
+      background-color: #ffffff;
+      width: 5px;
+    }
+
+    p {
+      color: $violet;
+      margin: 0;
+      font-family: "Poppins-Bold";
+      transition: 0.35s ease-out;
+      letter-spacing: 3pxw;
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+</style>

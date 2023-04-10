@@ -1,0 +1,161 @@
+---
+---
+
+<section id="contact">
+  <div class="formulaire">
+    <form action="">
+      <label for="name"
+        ><p>Name</p>
+        <input type="text" id="name" required />
+      </label>
+      <label for="email"
+        ><p>Email</p>
+        <input type="text" id="email" required />
+      </label>
+      <label for="subject"
+        ><p>Subject</p>
+        <input type="text" id="subject" />
+      </label>
+      <label for="message"
+        ><p>Message</p>
+        <textarea name="" id="message" cols="30" rows="10"> </textarea>
+      </label>
+      <button type="submit">SEND MESSAGE</button>
+    </form>
+  </div>
+  <div class="information">
+    <h5>
+      Nam ultrices ultrices nec tortor pulvinar esteras loremips est orem ipusm
+      mupolis tetoros.
+    </h5>
+    <p>
+      Mauris volutpat estera phasellus varius nec orcina quam augue loremes
+      lines rester pellentesque non estar identiqum pere setarra nunc vulputate
+      id in nullam polo lorem ipsum dolor setarra nunc vulputa teestertuos.
+    </p>
+    <p>
+      Nunc mollis lectus sed tellus aliquet, eu molestie mi venenatis aliquam id
+      nisi efficitur, tincidunt dui a, rhomi sed felis nisi, varius eu porta ut,
+      rutrum nonipus turos eto.
+    </p>
+    <div class="importantinfo">
+      <p>
+        <strong>Name:</strong>Jacob Hawkins
+      </p>
+      <p>
+        <strong>Address:</strong>New York, USA
+      </p>
+      <p>
+        <strong>Phone:</strong> +1 234-567-890
+      </p>
+      <p>
+        <strong>Hours:</strong>6:00 am – 2:00 am
+      </p>
+    </div>
+    <div class="logo">
+      <img src="/image/logo/behance.svg" alt="behance" />
+      <img src="/image/logo/twitter.svg" alt="twitter" />
+      <img src="/image/logo/facebook.svg" alt="facebook" />
+      <img src="/image/logo/youtube.svg" alt="youtube" />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @import "../layouts/stylesheet/main.scss";
+  .formulaire {
+    background-color: $violet;
+    width: 455px;
+    height: 723px;
+    border-radius: 30px;
+    padding: 45px;
+
+    label p {
+      color: #ffffffff;
+      font-family: "Poppins";
+      font-size: 14px;
+      line-height: 23.8px;
+    }
+  }
+  @media screen and (max-width: 770px) {
+    .formulaire {
+    width: 100%;
+  }
+  }
+  
+  input,
+  textarea {
+    border-bottom: 2px solid #ffffffff;
+    background-color: $violet;
+    min-width: 369px;
+    max-width: 369px;
+    margin-bottom: 50px;
+  }
+  @media screen and (max-width: 770px) {
+    input,
+  textarea  {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  }
+  textarea {
+    height: 150px;
+  }
+  button {
+    color: #ffffffff;
+    font-family: "Poppins-bold";
+    font-size: 14px;
+    letter-spacing: 3px;
+    position: relative;
+    transition: 0.35s;
+    &:hover {
+      color: $backpink;
+    }
+    &::before {
+      content: "";
+      width: 215px;
+      height: 3px;
+      position: absolute;
+      background-color: #ffffffff;
+      transition: width 0.35s ease-out;
+
+      bottom: -33.5px;
+    }
+    &:hover::before {
+      background-color: #ffffff;
+      width: 5px;
+    }
+  }
+  .information {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    p {
+      color: $violet;
+      font-family: "Poppins";
+      font-size: 15px;
+      line-height: 30px;
+    }
+    h5 {
+      color: $violet;
+      font-family: "Poppins-Bold";
+      font-size: 26px;
+      line-height: 25.5px;
+    }
+    .logo {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      fill: $violet;
+    }
+  }
+  section {
+    display: flex;
+    gap: 50px;
+  }
+  @media screen and (max-width: 770px) {
+    section {
+    flex-direction: column;
+  }
+  }
+</style>

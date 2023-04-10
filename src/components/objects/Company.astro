@@ -1,0 +1,30 @@
+---
+const props = Astro.props;
+let src: string = props.src;
+---
+
+<div class="frame">
+  <img src={src} alt="company" />
+</div>
+
+<style lang="scss">
+  @import "../../layouts/stylesheet/main.scss";
+  .frame {
+    background-color: $violet;
+    border-radius: 30px;
+    width: 455px;
+    height: 164px;
+    padding: 45px;
+
+    img {
+      margin: 0 auto;
+      width: 200px;
+      height: 74px;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .frame{
+      width: 100%;
+    }
+  }
+</style>
