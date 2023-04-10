@@ -3,6 +3,7 @@ import Pourcentage from "./objects/Pourcentage.astro";
 ---
 
 <section id="skills">
+  <h2>Skills</h2>
   <div class="information">
     <h5>
       Nam ultrices ultrices nec tortor pulvinar esteras loremips estorem ipusm
@@ -34,6 +35,23 @@ import Pourcentage from "./objects/Pourcentage.astro";
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 50px;
+    position: relative;
+    h2{
+      top: 22%;
+      right: 76%;
+    }
+    @media screen and (max-width: 1024px) {
+      h2{
+          top: -19%;
+          left: 0;
+
+      }
+    }
+    @media screen and (max-width: 825px) {
+        h2{
+            top: -8%;
+        }
+    }
     .information {
       background-color: $violet;
       border-radius: 30px;

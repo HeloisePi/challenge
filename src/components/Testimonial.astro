@@ -5,6 +5,7 @@ import Elementtestimonial from "./objects/Elementtestimonial.astro";
 ---
 
 <section id="testimonial">
+  <h2>Refs</h2>
   <div class="element">
     <Elementtestimonial
       description="Duis iaculis vulputate mauris, vitae ultricies nunc sodales et. Nunc at pin laoreet est lobortis est report.placerat vulputate malesuad tempus erat si"
@@ -58,6 +59,22 @@ import Elementtestimonial from "./objects/Elementtestimonial.astro";
   @import "../layouts/stylesheet/main.scss";
   section {
     position: relative;
+    h2{
+      top: 4%;
+      right: 82%;
+    }
+    @media screen and (max-width: 1024px) {
+      h2{
+          top: -15%;
+          left: 0;
+
+      }
+    }
+    @media screen and (max-width: 825px) {
+        h2{
+            top: -6%;
+        }
+    }
     .line {
       top: 0;
       left: 50%;

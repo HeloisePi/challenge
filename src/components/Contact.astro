@@ -2,6 +2,7 @@
 ---
 
 <section id="contact">
+  <h2>Hello</h2>
   <div class="formulaire">
     <form action="">
       <label for="name"
@@ -152,6 +153,22 @@
   section {
     display: flex;
     gap: 50px;
+    position: relative;
+    h2{
+      right: 77%;
+    }
+    @media screen and (max-width: 1024px) {
+      h2{
+          top: -22%;
+          left: 0;
+
+      }
+    }
+    @media screen and (max-width: 825px) {
+        h2{
+            top: -5%;
+        }
+    }
   }
   @media screen and (max-width: 770px) {
     section {

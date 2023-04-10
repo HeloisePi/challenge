@@ -4,6 +4,7 @@ import Link from "./objects/Link.astro";
 ---
 
 <section id="portfolio">
+  <h2>Portfolio</h2>
   <Elementportfolio
     scr="/image/portfolio_item_01.jpg"
     title="Web Design"
@@ -28,5 +29,22 @@ import Link from "./objects/Link.astro";
     display: flex;
     flex-direction: column;
     gap: 50px;
+    position: relative;
+    h2{
+      top: 24%;
+      right: 58%;
+    }
+    @media screen and (max-width: 1024px) {
+      h2{
+          top: -8%;
+          left: 0;
+
+      }
+    }
+    @media screen and (max-width: 825px) {
+        h2{
+            top: -5%;
+        }
+    }
   }
 </style>

@@ -20,3 +20,19 @@ h2{
     top: 18%;
     right: 72%;
 }
+@media screen and (max-width: 1024px) {
+    h2{
+        transform: rotate(0deg);
+        top: -18%;
+        left:0%;
+        font-size: 150px;
+    }
+}
+@media screen and (max-width: 825px) {
+    h2{
+        top: -4%;
+        font-size:65px;
+    }
+}
+        
+    

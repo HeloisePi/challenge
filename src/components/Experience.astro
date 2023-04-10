@@ -3,6 +3,7 @@ import Elementexp from "./objects/Elementexp.astro";
 ---
 
 <section id="experience">
+  <h2>Exp.</h2>
   <Elementexp
     date="September, 2016 – May, 2017"
     job="Junior Developer"
@@ -33,5 +34,22 @@ import Elementexp from "./objects/Elementexp.astro";
   @import "../layouts/stylesheet/main.scss";
   section {
     border-bottom: 2px solid $violet;
+    position: relative;
+    h2{
+      top: 6%;
+    right: 81%;
+    }
+    @media screen and (max-width: 1024px) {
+      h2{
+          top: -19%;
+          left: 0;
+
+      }
+    }
+    @media screen and (max-width: 825px) {
+        h2{
+            top: -8%;
+        }
+    }
   }
 </style>

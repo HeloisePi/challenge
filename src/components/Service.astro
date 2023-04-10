@@ -3,6 +3,7 @@ import Buttonservice from "./objects/Buttonservice.astro";
 ---
 
 <section id="service">
+  <h2>Svcs</h2>
   <div class="separation">
     <Buttonservice title="Design" />
     <Buttonservice title="Video" />
@@ -19,7 +20,24 @@ import Buttonservice from "./objects/Buttonservice.astro";
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 50px;
+    position: relative;
 
+    h2{
+      right: 79%;
+    }
+    @media screen and (max-width: 1024px) {
+      h2{
+          top: -23%;
+          left: 0;
+
+      }
+    }
+    @media screen and (max-width: 825px) {
+        h2{
+            top: -11%;
+        }
+    }
+ 
     
     .separation {
       display: flex;
