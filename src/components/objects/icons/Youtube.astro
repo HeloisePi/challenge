@@ -9,6 +9,7 @@ let colorhover: string = props.colorhover;
 <style lang="scss" define:vars={{ colorhover: colorhover }}>
     @import "../../../layouts/stylesheet/main.scss";
     svg:hover{
+        cursor: pointer;
         transition: 0.5s;
         fill: var(--colorhover);
     }

@@ -37,11 +37,7 @@ let title: string = props.title;
     padding-top: 43px;
     height: fit-content;
 
-    &:hover {
-      p {
-        color: $backpink;
-      }
-    }
+
 
     p {
       font-size: 38px;
@@ -49,6 +45,10 @@ let title: string = props.title;
       color: #ffffff;
       text-align: center;
       pointer-events: none;
+      transition: 0.5s;
+    }
+    .colorhover{
+      color: $backpink;
     }
     .list {
       width: 100%;
@@ -86,6 +86,7 @@ let title: string = props.title;
           p{
             font-size: 30px;
           }
+          
           .list{
             justify-content: flex-start;
             padding-left: 10px;
@@ -107,6 +108,10 @@ let title: string = props.title;
   buttons.forEach((element) => {
     element.addEventListener("click", function (e) {
       e.target.classList.toggle("hidden");
-    });
+      var text = element.querySelector('p');
+      text.classList.toggle('colorhover')
+      })
+
+
   });
 </script>
